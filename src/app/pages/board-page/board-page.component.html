@@ -1,0 +1,24 @@
+<section class="wrapper__board-page">
+  <button class="btn__back" type="button" routerLink="/main" (click)="isEnter()"><img class="btn__back-img" src="./assets/icons/back-Button.png" alt="icon"></button>
+  <div class="board-page__container-title">
+    <h2 class="board-page__title">{{title$ | async}}</h2>
+    <app-search></app-search>
+  </div>
+  <h3 class="board-page__description">{{description$ | async}}</h3>
+  <div class="container-label-addBtn">
+    <div class="container-label-user">
+      <span *ngFor="let user of usersTask$ | async" class="name-user" [ngStyle]="{background: colorUser(user[0])}"
+        (click)="setCheckUser(user[0])">{{user[0]}}</span>
+    </div>
+    <app-dialog (emitText)="onAddColumn($event)" *transloco="let t">
+      <button class="board-page__btn_add-column" (click)="setOneFieldForm()"
+        type="button">{{t('board.btn.addColumn')}}</button>
+    </app-dialog>
+  </div>
+  <app-tasks-user *ngIf="openTasksOneUser | async" [userTasks]="checkUser"></app-tasks-user>
+  <hr class="board-page__line">
+
+  <div class="board-page__container">
+    <app-board-container></app-board-container>
+  </div>
+</section>

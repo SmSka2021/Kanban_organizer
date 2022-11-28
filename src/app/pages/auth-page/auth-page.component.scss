@@ -1,0 +1,29 @@
+@import "utils-color";
+@import "breakpoint";
+
+.wrapper {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../../assets/img/dark-fon.jpg");
+  background-size: cover;
+}
+.container {
+  background-color: $light-font-color;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: $mq-tablet) {
+  .wrapper {
+    min-height: calc(100vh - 109px);
+  }
+}
+
+@media screen and (max-width: $mq-small) {
+  .wrapper {
+    min-height: calc(100vh - 99px);
+  }
+}

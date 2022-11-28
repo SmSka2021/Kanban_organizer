@@ -1,0 +1,135 @@
+{
+  "auth": {
+    "login-label": "Login",
+    "singUp-label": "Sing Up",
+    "login": {
+      "login-plh": "Please enter a login",
+      "password-plh": "Please enter a password",
+      "btn": "Login"
+    },
+    "singUp": {
+      "name-plh": "Please enter your name",
+      "login-plh": "Please enter a login",
+      "password-plh": "Please enter a password",
+      "btn": "Sing up"
+    }
+  },
+  "header": {
+    "boardsBtn": "Create board",
+    "profileBtn": "Edit profile",
+    "singUpBtn": "Sign Up",
+    "logInBtn": "Log In",
+    "logInOut": "Log Out",
+    "menu": "Menu",
+    "searchBtn": "Global Search"
+  },
+  "404-message": "Sorry, smth went wrong :(",
+  "welcome": {
+    "btn": "Create project",
+    "subtitle-1": "Advantages",
+    "subtitle-2": "Development Team",
+    "subtitle-3": "Kanban APP - demonstration",
+    "advantages": {
+      "text-1": "Kanban board is pleasant to use: tasks' color can be customized according to every user preferences",
+      "text-2": "Kanban board is convenient to use: two languages are supported",
+      "text-3": "Kanban board is easy to use: columns and tasks are movable and can be dragged to the best suitable place"
+    },
+    "team": {
+      "person-1": "Sviatlana Matskevich",
+      "person-2": "Ivan Lashuk",
+      "person-3": "Ulugbek Dushanov",
+      "description-1": "Board page, global-search pages and logic development, additional functionality implementation, application design, video demonstration, code-review",
+      "description-2": "Teamwork organization, welcome page, auth page and logic development, localization, backend error handling implementation, code-review",
+      "description-3": "The main page for showing boards, header, and footer development, code-review"
+    }
+  },
+  "search": {
+    "title": "Enter data to search",
+    "project": "Project",
+    "task": "Task",
+    "description": "Description",
+    "user": "User",
+    "result": "Searching results",
+    "search-bar": "search task, user",
+    "result-none": "It seems that nothing was found"
+  },
+  "board": {
+    "btn": {
+      "addTask": "Add task +",
+      "addColumn": "More Column +",
+      "cancel": "Cancel",
+      "ok": "Ok",
+      "sure": "Are you sure?"
+    },
+    "message-delete": "You can remove only your own tasks",
+    "message-column-title": "Name must be from 3 to 20 characters",
+    "message-column-descript": "Must be from 3 to 50 characters",
+    "search-bar": "search task"
+  },
+  "forms": {
+    "errors": {
+      "enterPass": "Enter a password",
+      "lengthPass": "Your password isn't strong enough at least 8 characters",
+      "lengthLogin": "Login should be at least 3 characters",
+      "lengthName": "Name should be at least 3 characters",
+      "enterName": "Enter a name",
+      "enterLogin": "Enter a login"
+    },
+    "enterData": "Enter data",
+    "title": "Title",
+    "title-plh": "Enter title",
+    "description": "Description",
+    "btnClose": "Close",
+    "btnSubmit": "Submit",
+    "addTask": "Edit task",
+    "save": "Save",
+    "edit": "Edit board"
+  },
+  "tasksUserInfo": {
+    "nameProject": "Project",
+    "developer": "Developer",
+    "task": "Task",
+    "status": "Status"
+  },
+  "editProfile": {
+    "titleName": "Your current name:",
+    "titleLogin": "Your current login:",
+    "changeName": "Change user name",
+    "enterName": "Enter new name",
+    "changeLogin": "Change user login",
+    "enterLogin": "Enter new login",
+    "changePassword": "Change user password",
+    "enterPassword": "Enter new password",
+    "deleteUser": "Delete user profile",
+    "attention": "Here you can delete your profile",
+    "deleteBtn": "Delete"
+  },
+  "main": {
+    "title": "All projects",
+    "subtitle": "My boards",
+    "search-bar": {
+      "search": "search board"
+    },
+    "sort-bar": {
+      "sort": "Sort"
+    },
+    "board-list": {
+      "board": "Create new board"
+    }
+  },
+  "spinner": "Loading",
+  "errorHandling": {
+    "token": "The token has expired, please login again",
+    "loginError": "User was not found. Please, check login and password",
+    "loginConflict": "User with this login already exists",
+    "bug": "Whoops! Seems is bug...",
+    "something": "Whoops! Something went wrong...",
+    "undocumented": "There is an error in the data somewhere. Please, try again",
+    "noBoard": "Board was not founded!",
+    "emptyColumnTittle": "Column title should not be empty"
+  },
+  "successes-login": "Successes! Login was changed",
+  "successes-name": "Successes! Name was changed",
+  "successes-pass": "Successes! Password was changed"
+}
+

@@ -1,0 +1,83 @@
+@import "utils-color";
+@import "mixins";
+@import "breakpoint";
+
+.wrapper {
+  min-height: calc(100vh - 111px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-image: url("/assets/img/light-fon.jpg");
+  background-size: contain;
+  padding-bottom: 20px;
+}
+
+.modal-container {
+  margin-top: 5%;
+  min-width: 280px;
+  max-width: 500px;
+  background-color: $light-blue-fon-color;
+  border: 2px solid $btn-add-hover-color;
+  border-radius: 6px;
+}
+
+.personal-information {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @include title-page;
+  color: $light-font-color;
+
+  img {
+    width: 200px;
+    border-radius: 100%;
+  }
+}
+
+.user-login,
+.user-name {
+  color: $dark-fon-color;
+  margin: 5px 0;
+  font-size: 14px;
+
+  span {
+    color: $dark-blue-font-color;
+  }
+}
+
+.btn {
+  background-color: $light-blue-fon-color;
+  border: 2px solid $btn-add-hover-color;
+  color: $dark-blue-font-color;
+}
+
+.text-warning {
+  color: $text-warning;
+}
+
+.personal-information img {
+  width: 50px;
+}
+
+.mat-action-row {
+  padding: 5px 8px 10px 7px;
+}
+
+@media screen and (max-width: $mq-laptop) {
+  .wrapper {
+    min-height: calc(100vh - 119px);
+  }
+}
+
+@media screen and (max-width: $mq-tablet) {
+  .wrapper {
+    min-height: calc(100vh - 113px);
+  }
+}
+
+@media screen and (max-width: $mq-small) {
+  .wrapper {
+    min-height: calc(100vh - 108px);
+  }
+}

@@ -1,0 +1,23 @@
+<div class="wrapper" *transloco="let t">
+  <div class="wrapper-fon"></div>
+  <div class="container-edit-task">
+    <h2 class="form-title">{{t('forms.addTask')}}</h2>
+    <mat-form-field appearance="standard" [style.width.%]=90>
+      <mat-label>{{t('forms.title')}}</mat-label>
+      <input matInput [(ngModel)]="taskForm.title" required minlength="3" />
+      <p class="error" *ngIf="taskForm.title.length < 3 || taskForm.title.length > 20">
+        {{t('board.message-column-title')}}</p>
+    </mat-form-field>
+    <mat-form-field appearance="standard" [style.width.%]=90>
+      <mat-label>{{t('forms.description')}}</mat-label>
+      <textarea class="area" [(ngModel)]="taskForm.description" matInput required minlength="3"></textarea>
+      <p class="error" *ngIf="taskForm.description.length < 3 || taskForm.description.length > 50">
+        {{t('board.message-column-descript')}}</p>
+    </mat-form-field>
+    <div>
+      <button type="button" mat-raised-button class="btn-close btn" (click)="close()">{{t('board.btn.cancel')}}</button>
+      <button type="button" mat-raised-button class="btn" color="primary" (click)="updateTask()"
+        disabled="{{taskForm.description.length < 3 || taskForm.title.length < 3 || taskForm.title.length > 20 || taskForm.description.length > 50}}">{{t('forms.save')}}</button>
+    </div>
+  </div>
+</div>

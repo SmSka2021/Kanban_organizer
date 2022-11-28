@@ -1,0 +1,12 @@
+<article class="search" *transloco="let t">
+  <div class="search__wrapper">
+    <input
+      type="text"
+      class="search__input"
+      [placeholder]="t('main.search-bar.search')"
+      maxlength="30"
+      [(ngModel)]="searchText"
+      (keyup)="search($event)"
+    >
+  </div>
+</article>

@@ -1,0 +1,63 @@
+<form [formGroup]="form" *transloco="let t" class="container">
+  <mat-form-field appearance="fill" class="field">
+    <input
+      matInput
+      type="text"
+      [placeholder]="t('auth.singUp.name-plh')"
+      formControlName="name"
+      maxlength="25"
+      minlength="3"
+    />
+    <mat-error *ngIf="name?.invalid">
+      <span *ngIf="name?.errors?.['required']">{{t("forms.errors.enterName")}}</span>
+      <span *ngIf="name?.errors?.['minlength']">{{ t("forms.errors.lengthName") }}</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="field">
+    <input
+      matInput
+      type="text"
+      [placeholder]="t('auth.singUp.login-plh')"
+      formControlName="login"
+      maxlength="25"
+      minlength="3"
+    />
+    <mat-error *ngIf="login?.invalid">
+      <span *ngIf="login?.errors?.['required']">{{t("forms.errors.enterLogin")}}</span>
+      <span *ngIf="login?.errors?.['minlength']">{{ t("forms.errors.lengthLogin")}}</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="field">
+    <input
+      matInput
+      [type]="hide ? 'password' : 'text'"
+      [placeholder]="t('auth.singUp.password-plh')"
+      formControlName="password"
+      maxlength="25"
+      minlength="8"
+    />
+    <button
+      type="button"
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+    <mat-error *ngIf="password?.invalid">
+      <span *ngIf="password?.errors?.['required']">{{t("forms.errors.enterPass")}}</span>
+      <span *ngIf="password?.errors?.['minlength']">{{t("forms.errors.lengthPass")}}</span>
+    </mat-error>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    [disabled]="!form.valid"
+    (click)="onSubmit()"
+    color="primary"
+    type="submit"
+  >
+    {{ t("auth.singUp.btn") }}
+  </button>
+</form>

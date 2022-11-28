@@ -1,0 +1,31 @@
+<div class="wrapper" *transloco="let t">
+  <h3 class="title">{{t('search.result')}}</h3>
+      <div class="container__tasks">
+        <div class="mat-elevation-z8">
+          <table class="table">
+            <thead>
+              <tr>
+              <th class="table__head">{{t('search.project')}}</th>
+              <th class="table__head">{{t('search.task')}}</th>
+              <th class="table__head">{{t('search.description')}}</th>
+              <th class="table__head">{{t('search.user')}}</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let board of (boardAndAllTasks | async)! | globalSearch: searchText">
+              <td class="table__body" (click)="saveIdCurrentBoard(board.idBoard)">{{board.boardTitle}}</td>
+              <td class="table__body" (click)="saveIdCurrentBoard(board.idBoard)">{{board.taskTitle}}</td>
+              <td class="table__body" (click)="saveIdCurrentBoard(board.idBoard)">{{board.taskDescription}}</td>
+              <td class="table__body" (click)="saveIdCurrentBoard(board.idBoard)">{{board.userLogin}}</td>
+            </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <div class="container__not-result" *ngIf="!isResultSearch$">
+          <img class="not-result__img" src="./assets/img/nothing-found.png" alt="icon">
+          <h4 class="not-result__title">{{t('search.result-none')}}</h4>
+        </div>
+      </div>
+    </div>
+

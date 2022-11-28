@@ -1,0 +1,52 @@
+@import "utils-color";
+
+@mixin not-found-text {
+  font: {
+    family: "Roboto", sans-serif;
+    size: calc(2vw + 2vh);
+    weight: bold;
+  }
+ color: $grey-color;
+}
+
+@mixin title-page {
+  font: {
+    family: "Roboto", sans-serif;
+    size: 22px;
+    weight: bold;
+  }
+  color: $dark-font-color;
+  margin: 0;
+  padding: 0;
+}
+
+
+@mixin title-column {
+  font: {
+    family: "Roboto", sans-serif;
+    size: 16px;
+    weight: bold;
+  }
+  color: $dark-font-color;
+}
+
+@mixin description-task {
+  font: {
+    family: "Roboto", sans-serif;
+    size: 12px;
+    weight: normal;
+  }
+  color: $description-color;
+}
+
+@mixin title-page-tablet {
+  font: {
+    family: "Roboto", sans-serif;
+    size: 18px;
+    weight: bold;
+    line-height: 20px;
+  }
+  color: $dark-font-color;
+  margin: 0;
+  padding: 0;
+}

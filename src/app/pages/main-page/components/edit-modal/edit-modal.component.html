@@ -1,0 +1,33 @@
+<article class="edit" *transloco="let t">
+  <div class="edit__wrapper">
+    <div class="edit__outer"></div>
+    <div class="edit__inner">
+      <form class="form">
+        <h2 class="form__title">{{ t('forms.edit') }}</h2>
+        <mat-form-field appearance="standard" [style.width.%]=90>
+          <mat-label>{{ t('forms.title') }}</mat-label>
+          <input matInput [(ngModel)]="title" [ngModelOptions]="{standalone: true}" type="text" required
+            minlength="3" />
+        </mat-form-field>
+        <p class="error" *ngIf="title.length > 20 || title.length < 3">{{t('board.message-column-title')}}</p>
+        <mat-form-field appearance="standard" [style.width.%]=90>
+          <mat-label>{{ t('forms.description') }}</mat-label>
+          <textarea matInput [(ngModel)]="description" [ngModelOptions]="{standalone: true}" class="area" required
+            minlength="3"></textarea>
+        </mat-form-field>
+        <p class="error" *ngIf="description.length > 50 || description.length < 3">
+          {{t('board.message-column-descript')}}</p>
+        <div class="form__buttons">
+          <button type="button" mat-raised-button class="btn-close btn" (click)="cancel()">
+            {{ t('board.btn.cancel') }}
+          </button>
+          <button type="button" mat-raised-button
+            [disabled]="!title || !description || title.length < 3 || description.length < 3 ||  title.length > 20 || description.length > 50"
+            class="btn" color="primary" (click)="edit()">
+            {{ t('forms.save') }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</article>

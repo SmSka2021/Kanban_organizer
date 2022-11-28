@@ -1,0 +1,30 @@
+@import "mixins";
+@import "breakpoint";
+
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 112px);
+  background-image: url("../../../../assets/img/light-fon.jpg");
+  background-size: cover;
+}
+
+.errorPage__title {
+  @include not-found-text
+}
+
+.errorPage__img {
+  width: 100px;
+  height: 91px;
+}
+@media screen and (max-width: $mq-small) {
+
+  .errorPage__img {
+    width: 60px;
+    height: 55px;
+  }
+
+
+}

@@ -1,0 +1,10 @@
+<article class="sort" *transloco="let t">
+  <div class="sort__wrapper">
+    <div class="sort__item">
+      <div class="sort__title">{{t('main.sort-bar.sort')}} {{ sortOrder }}</div>
+      <button class="sort__button" (click)="sort()" mat-icon-button type="button">
+        <mat-icon class="sort__icon" [ngClass]="{'sort__icon': rotateIcon}">sort</mat-icon>
+      </button>
+    </div>
+  </div>
+</article>

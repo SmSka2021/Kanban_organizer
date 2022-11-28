@@ -1,0 +1,166 @@
+@import 'utils-color';
+@import 'breakpoint';
+.list {
+
+  &__wrapper {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    column-gap: 100px;
+    row-gap: 15px;
+    width: 100%;
+    margin: 0 auto 15px;
+  }
+
+  &__item {
+    width: 350px;
+    min-height: 150px;
+    border: 1px solid rgba(0, 71, 255, 0.78);
+    border-radius: 8px;
+    box-shadow: 0px 3px 16px 1px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    word-break: break-all;
+    background-color:rgb(244, 248, 226);
+    transition: all ease .5s;
+    &:hover {
+      box-shadow:$shadow-card;
+    }
+  }
+  &__create {
+    background-color:rgb(252, 232, 250);
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
+
+  &__img {
+    display: block;
+    width: 120px;
+  }
+  &__members {
+    width: 60%;
+  }
+
+  &__subtitle {
+    margin: 0;
+    text-align: center;
+    color: $red-color;
+  }
+
+  &__outer {
+    padding: 20px;
+    cursor: pointer;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__description {
+    margin: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__icon {
+    color: $dark-fon-color;
+    transition: 0.3s linear color;
+
+    &:hover {
+      color: $btn-add-hover-color;
+    }
+  }
+}
+.first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  word-break: normal;
+  cursor: pointer;
+}
+
+@media screen and (max-width: $mq-laptop) {
+  .list {
+    &__item {
+      min-height: 140px;
+    }
+
+    &__outer {
+      padding: 10px;
+    }
+
+    &__description {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $mq-small) {
+  .list {
+    &__wrapper {
+      row-gap: 20px;
+    }
+
+    &__item {
+      min-height: 100px;
+      width: 270px;
+    }
+
+    &__outer {
+      padding: 0 10px;
+    }
+
+    &__subtitle {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    &__img {
+      width: 70px;
+    }
+
+    &__title {
+      font-size: 12px;
+    }
+
+    &__button {
+      width: 20px;
+      height: 20px;
+    }
+
+    &__members {
+      width: 50%;
+    }
+
+    &__description {
+      font-size: 12px;
+    }
+  }
+
+  .material-icons {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,14 @@
+<div class="mb-2 card-container">
+  <h4 class="title-task">{{item.title}}</h4>
+  <button class="edit-task-btn" type="button" (click)="editTask(item.id)">
+    <img class="edit-task-img" src="./assets/icons/correct_pencil.svg" alt="icon" />
+  </button>
+  <p class="description-task">{{item.description}}</p>
+  <img class="img-task" src="./assets/img/members3.png" alt="icon">
+  <br>
+  <span class="name-user"  [ngStyle]="{background: getColorUserById(item.userId)}">{{getNameUserById(item.userId)}}</span>
+  <app-app-confirm [data]="data" (emitConfirm)="deleteOneTask($event, item.id, item.userId)"><button mat-icon-button
+      class="icon-delete" type="button">
+      <mat-icon class="btn-delete">delete</mat-icon>
+    </button></app-app-confirm>
+</div>

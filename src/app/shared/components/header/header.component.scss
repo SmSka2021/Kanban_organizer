@@ -1,0 +1,165 @@
+@import 'utils-color';
+@import "breakpoint";
+
+.header {
+  width: 100%;
+  position: relative;
+  z-index: 15;
+  transition: 0.7s;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 70px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    width: 90px;
+  }
+
+  a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      color: $light-font-color;
+      cursor: pointer;
+
+      &:hover {
+        opacity: .7;
+      }
+  }
+  &__search {
+    width: 25px;
+  }
+
+  &__language button {
+    border: none;
+    font-weight: 500;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__button-icon {
+    width: 12px;
+  }
+
+  &__language span {
+    padding: 0 4px;
+    font-weight: 700;
+    color: $light-font-color;
+  }
+}
+
+.mat-raised-button {
+  color: $light-font-color;
+  background-color: $dark-fon-color;
+  opacity: 1;
+}
+
+.mat-raised-button:hover {
+  opacity: 0.7;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  box-shadow: $shadow-card;
+  opacity: 0.7;
+}
+
+.header__nav-menu {
+  font-size: 11px;
+  font-weight: 400;
+  color: $light-font-color;
+  display: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.mat-form-field {
+  width: 60px;
+  color: $light-font-color;
+}
+
+.checkLangDark {
+  text-decoration: none;
+  border-bottom: 2px solid $dark-fon-color;
+}
+
+.checkLangLight {
+  text-decoration: none;
+  border-bottom: 2px solid $light-font-color;
+}
+
+@media screen and (max-width: $mq-laptop) {
+  .header__wrapper {
+    padding: 10px 50px;
+  }
+}
+
+@media screen and (max-width: $mq-tablet) {
+  .header__wrapper {
+    padding: 10px 20px;
+  }
+
+  .mat-raised-button,
+  .header__en,
+  .header__ru,
+  .header__nav-txt,
+  .header a {
+    font-size: 11px;
+    font-weight: 400;
+  }
+
+  .header__logo {
+    width: 60px;
+  }
+
+  .header__buttons {
+    gap: 3px;
+  }
+
+  .header__btn-signup,
+  .header__btn-login {
+    height: 27px;
+    display: flex;
+    padding: 0 5px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: $mq-small) {
+
+  .header__nav-menu {
+    display: flex;
+  }
+
+  .header__nav-txt {
+    display: none;
+  }
+
+  .header__button-logo {
+    width: 70px;
+    padding: 2px 5px;
+    margin-left: 10px;
+  }
+
+  .header__right {
+    width: auto;
+  }
+}

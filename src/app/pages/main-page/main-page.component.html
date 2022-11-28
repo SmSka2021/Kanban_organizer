@@ -1,0 +1,18 @@
+<section class="main" *transloco="let t">
+  <div class="main__wrapper">
+    <div class="main__outer">
+      <h2 class="main__title">{{ t('main.title') }}</h2>
+      <app-search-bar class="main__search"></app-search-bar>
+    </div>
+    <div class="main__inner">
+      <div class="main__item">
+        <img src="./assets/icons/heroicons-outline_view-boards.svg" alt="view-icon">
+        <h3 class="main__subtitle">{{ t('main.subtitle') }}</h3>
+      </div>
+      <app-sort-bar></app-sort-bar>
+    </div>
+    <div class="main__list">
+      <app-board-list></app-board-list>
+    </div>
+  </div>
+</section>

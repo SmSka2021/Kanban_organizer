@@ -1,0 +1,8 @@
+<div (scroll)="onWindowScroll($event)">
+  <ngx-spinner *transloco="let t" class="spinner" size="medium" type="ball-scale-multiple">
+    <p>{{t('spinner')}}...</p>
+  </ngx-spinner>
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>

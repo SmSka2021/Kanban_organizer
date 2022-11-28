@@ -1,0 +1,76 @@
+@import "utils-color";
+@import "mixins";
+@import "breakpoint";
+
+.wrapper {
+  max-width: 300px;
+  min-height: 390px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  border: 5px dashed transparent;
+  background-color: $light-font-color;
+  background-image: url("../../../../../assets/img/light-fon.jpg");
+  transition: all ease .5s;
+  cursor: pointer;
+  &:hover {
+    border: 5px dashed rgb(82, 79, 252);
+  }
+
+  &:hover .name__title {
+    color: $title-hover;
+  }
+
+  img {
+    width: 130px;
+    height: 130px;
+    border-radius: 100%;
+  }
+}
+
+.name__title {
+  @include title-page;
+  font-size: 20px;
+  margin: 20px auto;
+  text-align: center;
+  transition: all ease .5s;
+}
+
+.name__text {
+  font: {
+    family: "Roboto", sans-serif;
+    font-size: 18px;
+    weight: normal;
+    line-height: 24px;
+  }
+
+  color: $description-color;
+  text-align: center;
+  line-height: 27px;
+}
+
+
+@media screen and (max-width: $mq-laptop) {
+  .name__title {
+    font-size: 18px;
+  }
+  .name__text {
+    font-size: 16x;
+
+  }
+}
+
+@media screen and (max-width: $mq-small) {
+
+   .name__title {
+    font-size: 17px;
+    line-height: 22px;
+  }
+  .name__text {
+    font-size: 15px;
+  }
+}
+

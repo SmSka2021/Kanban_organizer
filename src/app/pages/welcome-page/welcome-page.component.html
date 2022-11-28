@@ -1,0 +1,40 @@
+<section class="section-wrapper main-section dark-bg" *transloco="let t">
+  <app-message-user [title]="message"></app-message-user>
+  <h2 class="main-title-mobile">KANBAN</h2>
+  <div class="two-columns">
+    <div class="page-title-container">
+      <h2 class="main-title">KANBAN</h2>
+      <p class="subtitle">organizer</p>
+      <button class="main-btn" mat-raised-button (click)="showMessage()">{{t('welcome.btn')}}</button>
+    </div>
+    <div  class="page-img-container">
+      <img class="main-img" src="./assets/img/img-welcome-page.png" alt="img"/>
+    </div>
+  </div>
+</section>
+<section class="section-wrapper light-bg" *transloco="let t">
+  <h3 class="block-title">{{t('welcome.subtitle-1')}}</h3>
+  <div class="three-columns">
+    <app-advantage-card
+      *ngFor="let item of advantagesData"
+      [advantageData]="item"
+    >
+    </app-advantage-card>
+  </div>
+</section>
+<section class="section-wrapper light-bg" *transloco="let t">
+  <hr class="board-page__line">
+  <h3 class="block-title">{{t('welcome.subtitle-3')}}</h3>
+  <div class="three-columns">
+    <app-video-player></app-video-player>
+  </div>
+</section>
+<section class="section-wrapper dark-bg" *transloco="let t">
+  <h3 class="block-title-light">{{t('welcome.subtitle-2')}}</h3>
+  <div class="three-columns team">
+    <app-teammate
+      *ngFor="let teammate of teemData"
+      [teammateData]="teammate"
+    ></app-teammate>
+  </div>
+</section>

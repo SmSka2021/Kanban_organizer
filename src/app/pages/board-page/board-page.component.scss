@@ -1,0 +1,193 @@
+@import "utils-color";
+@import "mixins";
+@import "bootstrap";
+@import "breakpoint";
+
+.wrapper__board-page {
+  width: 100%;
+  min-height: calc(100vh - 111px);
+  padding: 10px 70px;
+  font-family: "Roboto", sans-serif;
+  color: $light-font-color;
+  background-image: url("./../../../assets/img/light-fon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.btn__back {
+  position: fixed;
+  width: 30px;
+  top: 80px;
+  left: 30px;
+  border: none;
+  transition: all ease 0.7s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.btn__back-img {
+  width: 30px;
+}
+
+.board-page__container-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7px;
+  padding-left: 30px;
+}
+
+.board-page__container {
+  width: 95%;
+  overflow-x: auto;
+}
+
+.board-page__title {
+  @include title-page;
+}
+
+.board-page__description {
+  margin-bottom: 7px;
+  font-size: 18px;
+  color: $description-color;
+}
+
+.title-today {
+  margin-top: 7px;
+  font-size: 16px;
+  color: $grey-color;
+}
+
+.board-page__img {
+  height: 25px;
+}
+
+.board-page__line {
+  width: 95%;
+  height: 10px;
+  border-radius: 10px;
+  background-color: $grey-color;
+}
+
+.board-page__btn_add-column {
+  position: absolute;
+  top: 42%;
+  right: -30px;
+  width: 150px;
+  height: 40px;
+  border: 1px solid $btn-add-color;
+  border-radius: 10px;
+  color: $dark-font-color;
+  box-shadow: 0.4em 0.4em 5px rgba(122, 122, 122, 0.5);
+  background: $btn-add-color;
+  transform: rotate(-90deg);
+  cursor: pointer;
+
+  &:hover {
+    background: $btn-add-hover-color;
+    border: 1px solid $btn-add-hover-color;
+  }
+}
+
+.container-label-user {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 5px;
+
+  .name-user {
+    padding: 0 7px;
+    border: 1px solid $light-grey-color;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    color: $dark-font-color;
+    cursor: pointer;
+    transition: all ease 0.3s;
+
+    &:hover {
+      box-shadow: $shadow-title-column;
+    }
+  }
+}
+
+@media screen and (max-width: $mq-laptop) {
+  .wrapper__board-page {
+    padding: 10px 50px;
+    min-height: calc(100vh - 119px);
+  }
+}
+
+@media screen and (max-width: $mq-tablet) {
+  .btn__back {
+    top: 70px;
+    left: 15px;
+  }
+
+  .wrapper__board-page {
+    padding: 10px 20px;
+    min-height: calc(100vh - 113px);
+  }
+
+  .board-page__title {
+    @include title-page-tablet;
+  }
+
+  .board-page__description {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .container-label-user {
+    width: 60%;
+  }
+
+  .board-page__btn_add-column {
+    position: relative;
+    width: 100px;
+    height: 30px;
+    right: 0;
+    transform: rotate(0deg);
+    font-size: 10px;
+  }
+
+  .board-page__line {
+    width: 100%;
+  }
+
+  .container-label-addBtn {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .board-page__container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: $mq-small) {
+  .wrapper__board-page {
+    min-height: calc(100vh - 108px);
+  }
+
+  .board-page__container-title {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .board-page__title {
+    margin-bottom: 15px;
+  }
+
+  .board-page__description {
+    text-align: center;
+  }
+}

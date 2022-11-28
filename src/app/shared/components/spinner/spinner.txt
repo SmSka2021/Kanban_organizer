@@ -1,0 +1,29 @@
+
+
+  1) ДЛЯ ВСТАВКИ СПИНЕРА НЕОБХОДИМО ВСТАВИТЬ ЭТОТ КОД в template:
+  <ngx-spinner *transloco="let t"  type="ball-scale-multiple">
+   <p class="spinner-text">{{t('spinner')}}...</p>
+</ngx-spinner>
+
+2) В МОДУЛЬ импортировать:
+@NgModule({
+  imports: [
+    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' })
+  ]
+})
+
+3) в ts запускать и останавливать cпинер можно через глобальный сервис:
+import { NgxSpinnerService } from "ngx-spinner";
+
+class AppComponent implements OnInit {
+  constructor(private spinner: NgxSpinnerService) {}
+
+  start() {
+      this.spinner.show();
+  }
+  stop() {
+      this.spinner.hide();
+  }
+
+  более подробно: https://www.npmjs.com/package/ngx-spinner
+-->

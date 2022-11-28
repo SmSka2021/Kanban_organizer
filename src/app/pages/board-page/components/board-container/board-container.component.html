@@ -1,0 +1,42 @@
+<div cdkDropListGroup  *ngIf="(columns$ | async) as columns">
+  <app-message-user *transloco="let t" [title]="t('board.message-delete')"></app-message-user>
+  <div cdkDropListGroup [cdkDropListDisabled] = " isDisabledDrop$ | async" cdkDropList [cdkDropListData]="columns" cdkDropListOrientation="horizontal"  (cdkDropListDropped)="ondrop($event)" class="container-column">
+  <div class="column" cdkDrag  *ngFor="let column of columns | filter: filterService.getValueInputFilter(); let i = index">
+
+    <div class="column__title-container">
+      <div class="title-column" (click)="hideTitleColumn(i, column.id)">
+        <h3 class="title">{{column.title}}</h3>
+      </div>
+      <div class="edit-container" *transloco="let t">
+        <button class="button-edit-input close-edit" (click)="showTitleColumn(i)">X</button>
+        <button class="button-edit-input save-edit" matTooltip="{{t('board.message-column-title')}}" [matTooltipDisabled]="titleColumn.length > 2 && titleColumn.length <= 20" (click)="updateTitleColumn(column.id, i)">V</button>
+        <input class="title-input" [(ngModel)]="titleColumn" matTooltip="{{t('board.message-column-title')}}" maxlength="20" minlength="3">
+      </div>
+      <app-app-confirm [data]="data" (emitConfirm)="deleteColumn($event, column.id)">
+        <button mat-icon-button class="icon-delete" type="button">
+          <img src="./assets/icons/delete.svg" alt="icon">
+        </button>
+      </app-app-confirm>
+      <div class="example-handle" cdkDragHandle>
+        <svg width="20px" fill="blue" viewBox="0 0 24 24">
+          <path d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+      </div>
+    </div>
+    <hr class="board-page__line">
+    <app-color-panel (emitColor)="colorChange($event, column.id)"></app-color-panel>
+    <app-dialog (emitText)="addNewTask($event, column.id)" *transloco="let t">
+      <button mat-raised-button class="btn-add-task" type="button" (click)="setTwoFieldForm()">{{t('board.btn.addTask')}}</button>
+    </app-dialog>
+    <app-edit-task *ngIf="isShow$ | async"></app-edit-task>
+
+    <div class="example-list" [cdkDropListDisabled] = " isDisabledDrop$ | async" cdkDropList [cdkDropListData]="column.tasks" (cdkDropListDropped)="drop($event, column.id)">
+      <div cdkDrag class="example-box {{item.id}}" [ngStyle]="{background: colorIdColumn[column.id]}" *ngFor="let item of column.tasks">
+        <app-item-board [item]="item" (emitEditTask)="editTask($event, column.id)"
+          (emitDeleteTask)="onDeleteTask($event, column.id)"></app-item-board>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

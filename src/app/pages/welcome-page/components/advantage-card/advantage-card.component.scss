@@ -1,0 +1,49 @@
+@import "mixins";
+@import "breakpoint";
+
+.wrapper {
+  max-width: 300px;
+
+}
+
+.info-box {
+  min-height: 225px;
+  padding: 10px 20px;
+  background-image: url("/assets/img/info-box.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: all ease .4s;
+  cursor: pointer;
+
+  &:hover img {
+    transform: scale(1.4);
+  }
+
+  &:hover p {
+    color: $title-hover;
+  }
+
+  p {
+    @include description-task;
+    font-size: 20px;
+    text-align: center;
+    line-height: 27px;
+  }
+}
+
+.info-box__img {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  transition: all ease .4s;
+}
+
+@media screen and (max-width: $mq-laptop) {
+  .info-box p {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}

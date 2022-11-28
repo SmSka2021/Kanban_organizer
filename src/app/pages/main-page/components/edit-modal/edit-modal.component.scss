@@ -1,0 +1,61 @@
+@import "utils-color";
+
+.edit {
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 4;
+  }
+
+  &__outer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: $grey-color;
+    opacity: 0.3;
+    z-index: 5;
+  }
+
+  &__inner {
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 20px;
+    border: 1px solid $dark-fon-color;
+    border-radius: 10px;
+    color: $dark-fon-color;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+  }
+}
+
+.form {
+  &__area {
+    resize: vertical;
+  }
+}
+
+.btn {
+  width: 100px;
+  height: 40px;
+  margin: 14px;
+  transition: all ease-in 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: $shadow-title-column;
+  }
+}
+
+.error {
+  color: #f44336;
+  font-size: 10px;
+  margin: 0;
+}

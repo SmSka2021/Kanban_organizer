@@ -1,0 +1,27 @@
+<div class="wrapper" *transloco="let t">
+  <div class="wrapper-fon"></div>
+    <div class="container__title-task">
+      <h3 class="title">{{t('tasksUserInfo.nameProject')}}: <span class="title-item">{{title$ | async}}</span></h3>
+      <h3 class="title">{{t('tasksUserInfo.developer')}}:  <span class="title-nameUser">{{nameUser}}</span></h3>
+
+      <div class="container__tasks">
+        <div class="mat-elevation-z8">
+          <table class="table">
+            <thead>
+              <tr>
+              <th class="table__head">{{t('tasksUserInfo.task')}}</th>
+              <th class="table__head">{{t('tasksUserInfo.status')}}</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let task of arrTasksOneUser | async">
+              <td class="table__body">{{task.task}}</td>
+              <td class="table__body">{{task.column}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <button type="button" class="btn" (click)="close()">Ok</button>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+@import "utils-color";
+
+.modal-confirm {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 200px;
+  padding: 40px 50px;
+  border-radius: 7px;
+  text-align: center;
+  color: $light-font-color;
+  background-image: url('../../../../assets/img/dark-fon.jpg');
+  background-position: center center;
+  background-size: 100%;
+  transform: translate(-50%, -50%);
+  box-shadow: $shadow-card;
+  z-index: 2;
+
+  .container-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px auto 40px;
+
+    .btn-confirm {
+      width: 90px;
+      height: 30px;
+      border: none;
+      border-radius: 15px;
+      font-weight: 700;
+      background: $light-font-color;
+      color: $dark-fon-color;
+      cursor: pointer;
+
+      &:hover {
+        background: $light-blue-fon-color;
+      }
+    }
+  }
+}

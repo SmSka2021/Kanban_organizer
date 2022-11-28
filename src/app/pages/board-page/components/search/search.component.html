@@ -1,0 +1,14 @@
+<article class="search" *transloco="let t">
+  <div class="search__wrapper">
+    <input
+      type="search"
+      class="search__input"
+      [placeholder]="t('board.search-bar')"
+      maxlength="20"
+      #inpFocus
+     [(ngModel)]='valueInput'
+     (ngModelChange)="changeInput(valueInput)"
+    >
+  </div>
+</article>
+

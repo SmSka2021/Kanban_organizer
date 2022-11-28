@@ -1,0 +1,24 @@
+@import 'utils-color';
+@import "breakpoint";
+.container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: $light-font-color;
+}
+
+mat-form-field {
+  &.field{
+    width: 320px;
+  }
+}
+@media screen and (max-width: $mq-small) {
+
+  mat-form-field {
+    &.field{
+      width: 240px;
+      font-size: 12px;
+    }
+}
+
+}

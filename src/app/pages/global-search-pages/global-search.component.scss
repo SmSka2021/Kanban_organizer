@@ -1,0 +1,72 @@
+@import "utils-color";
+@import "mixins";
+@import "breakpoint";
+
+.wrapper__search-page {
+  width: 100%;
+  min-height: calc(100vh - 111px);
+  padding: 10px 70px;
+  font-family: "Roboto", sans-serif;
+  color: $light-font-color;
+  background-image: url("./../../../assets/img/light-fon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.search-page__container-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+}
+
+.search-page__title {
+  margin: 0;
+  font-size: 14px;
+  color: $description-color;
+}
+
+.board-page__line {
+  width: 100%;
+  height: 10px;
+  margin: 20px 0;
+  border: none;
+  box-sizing: border-box;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="3px" height="3px" viewBox="0 0 3 3" fill="rgb(40, 36, 107)"><polygon points="0,0.5 0,1.5 1.5,3 2.5,3"></polygon><polygon points="2.5,0 1.5,0 3,1.5 3,0.5"></polygon></svg>');
+  background-size: 6px 6px;
+}
+
+@media screen and (max-width: $mq-laptop) {
+  .wrapper__search-page {
+    padding: 10px 50px;
+    min-height: calc(100vh - 119px);
+  }
+}
+
+@media screen and (max-width: $mq-tablet) {
+  .wrapper__search-page {
+    padding: 10px 20px;
+    min-height: calc(100vh - 113px);
+  }
+
+  .search-page__container-title {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .search-page__title {
+    margin-bottom: 0;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: $mq-small) {
+  .wrapper__search-page {
+    padding: 10px 10px;
+    min-height: calc(100vh - 108px);
+  }
+}

@@ -1,0 +1,51 @@
+@import 'utils-color';
+@import "breakpoint";
+
+.footer {
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 70px;
+
+    a {
+      opacity: 0.8;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .footer__githubs-img {
+    width: 50%;
+  }
+
+  .footer__rs-img {
+    justify-content: flex-end;
+    max-width: 70px;
+  }
+
+  .rs {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: $mq-laptop) {
+  .footer__wrapper {
+    height: 57px;
+    padding: 5px 50px;
+  }
+}
+
+@media screen and (max-width: $mq-small) {
+  .footer__wrapper {
+    height: 47.5px;
+    padding: 3px 20px;
+  }
+}

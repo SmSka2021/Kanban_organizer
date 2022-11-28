@@ -1,0 +1,9 @@
+<div class="container-color">
+  <div *ngFor="let color of colorsData">
+    <div
+      [ngStyle]="{background: color}"
+      class="color-item"
+      (click)="colorEmit(color)">
+    </div>
+  </div>
+</div>

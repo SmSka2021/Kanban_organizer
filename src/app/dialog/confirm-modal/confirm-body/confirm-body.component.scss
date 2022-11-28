@@ -1,0 +1,19 @@
+@import "utils-color";
+.btn {
+width: 75px;
+transition: all ease-in .4s;
+&:hover {
+  box-shadow: $shadow-title-column;
+}
+}
+.confirm-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mat-dialog-actions {
+  width: 75%;
+  justify-content: space-between;
+}

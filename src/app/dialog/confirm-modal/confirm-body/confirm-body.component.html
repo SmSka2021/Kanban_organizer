@@ -1,0 +1,8 @@
+<div class="confirm-container" *transloco="let t">
+  <h1 mat-dialog-title>{{t('board.btn.sure')}}</h1>
+  <div mat-dialog-content>{{ message }}</div>
+  <div mat-dialog-actions>
+      <button class="btn" mat-button [mat-dialog-close]="{clicked: true}">{{t('board.btn.ok')}}</button>
+      <button class="btn" mat-raised-button color="primary" [mat-dialog-close]="{clicked: false}">{{t('board.btn.cancel')}}</button>
+  </div>
+</div>

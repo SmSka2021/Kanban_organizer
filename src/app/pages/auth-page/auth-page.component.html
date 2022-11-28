@@ -1,0 +1,7 @@
+<div class="wrapper" *transloco="let t">
+  <mat-tab-group class="container" mat-align-tabs="center" animationDuration="0ms" [selectedIndex]="tabIndex">
+    <mat-tab [label]="t('auth.login-label')"><app-login></app-login></mat-tab>
+    <mat-tab [label]="t('auth.singUp-label')"><app-sing-up></app-sing-up></mat-tab>
+  </mat-tab-group>
+</div>
+

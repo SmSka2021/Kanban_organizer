@@ -1,0 +1,111 @@
+@import 'utils-color';
+@import 'mixins';
+@import 'breakpoint';
+.main {
+  padding-top: 20px;
+  background-image: url("../../../assets/img/light-fon.jpg");
+  background-size: cover;
+  min-height: calc(100vh - 111px);
+
+  &__wrapper {
+    width: 100%;
+    padding: 10px 50px;
+  }
+
+  &__outer {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    @include title-page;
+    font-size: 30px;
+  }
+
+  &__search {
+    position: absolute;
+    left: 44%;
+  }
+
+  &__inner {
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    & img {
+      margin-right: 10px;
+      width: 20px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    color: $grey-color;
+    margin: 0;
+  }
+
+  &__list {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: $mq-laptop) {
+  .main {
+    &__search {
+      left: 35%;
+    }
+  }
+}
+
+@media screen and (max-width: $mq-tablet) {
+  .main {
+    &__outer {
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+    &__search {
+      position: static;
+    }
+  }
+}
+
+@media screen and (max-width: $mq-small) {
+  .main {
+    &__title {
+      font-size: 20px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+    }
+
+    &__outer {
+      margin-bottom: 10px;
+    }
+
+    &__inner {
+      flex-direction: column;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &__item {
+      justify-content: center;
+    }
+    &__item img {
+      margin-right: 4px;
+    }
+  }
+}

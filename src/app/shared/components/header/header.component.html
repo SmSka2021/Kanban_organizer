@@ -1,0 +1,42 @@
+<header class="header" [ngStyle]="{'background-color': bgColor}" *transloco="let t" id="header">
+  <div class="header__wrapper">
+    <a href="#"> <img [src]="logoSource" class="header__logo" alt="logo"></a>
+    <app-dialog (emitText)="addNewBoard($event)" appStopPropagation (click)="setTwoFieldForm()"><a
+        class="header__nav-txt" *ngIf="headerNavigation" routerLink="/main"
+        (click)="showSpinner()">{{t('header.boardsBtn')}}</a>
+    </app-dialog>
+    <a class="header__nav-txt" *ngIf="headerNavigation" routerLink="/search" (click)="getBoards()"><img
+        src="./assets/icons/icon-global-search.png" class="header__search" alt="icon search"></a>
+    <a class="header__nav-txt" *ngIf="headerNavigation" routerLink="/edit-profile">{{t('header.profileBtn')}}</a>
+    <div class="header__nav-small" *ngIf="headerNavigation">
+      <button class="header__nav-menu" mat-button [matMenuTriggerFor]="menu">{{t('header.menu')}}</button>
+      <mat-menu #menu="matMenu">
+        <app-dialog (emitText)="addNewBoard($event)" appStopPropagation (click)="setTwoFieldForm()"><button
+            mat-menu-item routerLink="/main" (click)="showSpinner()">{{t('header.boardsBtn')}}</button> </app-dialog>
+        <button mat-menu-item routerLink="/edit-profile">{{t('header.profileBtn')}}</button>
+        <button mat-menu-item routerLink="/search" (click)="getBoards()">{{t('header.searchBtn')}}</button>
+      </mat-menu>
+    </div>
+    <div class="header__language">
+      <a class="header__en" [ngStyle]="{'color': languageButtonColor}"
+        [ngClass]="{'checkLangLight': checkLang === 'en' && languageButtonColor ==='#fff'}"
+        [ngClass]="{'checkLangDark': checkLang === 'en' && languageButtonColor !=='#fff'}"
+        (click)="setLang('en')">En</a>
+      <span [ngStyle]="{'color': languageButtonColor}">/</span>
+      <a class="header__ru" [ngStyle]="{'color': languageButtonColor}"
+        [ngClass]="{'checkLangLight': checkLang === 'ru' && languageButtonColor !=='#000'}"
+        [ngClass]="{'checkLangDark': checkLang === 'ru' && languageButtonColor ==='#000'}"
+        (click)="setLang('ru')">Ru</a>
+    </div>
+    <div class="header__buttons" *ngIf="headerButtons">
+      <button class="header__btn-signup" mat-raised-button routerLink="/auth/signup">{{t('header.singUpBtn')}}</button>
+      <button class="header__btn-login" mat-raised-button routerLink="/auth/login">{{t('header.logInBtn')}}</button>
+    </div>
+    <div class="header__button" *ngIf="!headerButtons">
+      <button class="header__button-logo" mat-raised-button (click)="logOut()">
+        <img class="header__button-icon" src="./assets/icons/login-man.svg" alt="login-man">
+        {{t('header.logInOut')}}
+      </button>
+    </div>
+  </div>
+</header>

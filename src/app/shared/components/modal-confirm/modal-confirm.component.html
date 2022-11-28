@@ -1,0 +1,7 @@
+<div class="modal-confirm" *ngIf="showModal$ | async">
+  <h3 class="modal-title">Are You sure?</h3>
+  <div class="container-btn">
+    <button type="button" class="btn-confirm" (click)="cancel()">Сancel</button>
+    <button type="button" class="btn-confirm" (click)="confirm()">Сonfirm</button>
+  </div>
+</div>

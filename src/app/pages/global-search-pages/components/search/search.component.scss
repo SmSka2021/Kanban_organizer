@@ -1,0 +1,45 @@
+@import 'utils-color';
+@import 'breakpoint';
+
+.search {
+  &__wrapper {
+    position: relative;
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid $light-blue-fon-color;
+    border-radius: 20px;
+    padding: 10px 20px;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    border-color: transparent;
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: $mq-laptop) {
+  .search {
+    &__wrapper {
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: $mq-small) {
+
+  .search {
+    &__wrapper {
+      width: 250px;
+    }
+
+    &__input {
+      font-size: 12px;
+    }
+  }
+}

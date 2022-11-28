@@ -1,0 +1,16 @@
+$mq-desktop: 1680px;
+$mq-laptop: 1280px;
+$mq-tablet: 768px;
+$mq-small: 480px;
+$mq-mobile: 320px;
+
+/*
+ ИСПОЛЬЗУЕМ:
+ @import "breakpoint";
+
+@media screen and (min-width: $mq-laptop) {
+}
+
+@media screen and (max-width: $mq-tablet) {
+}
+*/

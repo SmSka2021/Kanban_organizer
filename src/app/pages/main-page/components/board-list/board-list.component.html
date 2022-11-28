@@ -1,0 +1,32 @@
+<article class="list" *transloco="let t">
+  <ul class="list__wrapper">
+    <li class="list__item list__create">
+      <app-dialog (emitText)="addNewBoard($event)" appStopPropagation (click)="setTwoFieldForm()">
+      <div class="list__outer first" >
+        <h2 class="list__subtitle">{{ t('main.board-list.board') }}</h2>
+        <img src="./assets/img/pensil.png" alt="create" class="list__img">
+      </div>
+      </app-dialog>
+    </li>
+    <li class="list__item" *ngFor="let board of (boards$ | async)! | search: searchText | sort: sortOrder">
+      <div class="list__outer" (click)="sendBoardId(board.id)">
+        <div class="list__inner">
+          <h3 class="list__title">{{ board.title }}</h3>
+          <div class="list__buttons">
+            <button mat-icon-button appStopPropagation (click)="openEditModal(board.id)" class="list__button" type="button">
+              <mat-icon class="list__icon">edit</mat-icon>
+            </button>
+            <app-app-confirm [data]="data" appStopPropagation (emitConfirm)="deleteBoard($event, board.id)">
+              <button mat-icon-button class="list__button" type="button">
+                <mat-icon class="list__icon">delete</mat-icon>
+              </button>
+            </app-app-confirm>
+          </div>
+        </div>
+         <img class="list__members" src="./assets/img/members.png" alt="icon">
+        <p class="list__description">{{ board.description }}</p>
+      </div>
+    </li>
+  </ul>
+  <app-edit-modal *ngIf="isEditModalOpened"></app-edit-modal>
+</article>
